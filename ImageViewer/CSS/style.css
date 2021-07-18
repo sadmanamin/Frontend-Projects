@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.imagegrid {
+  display: grid;
+
+  margin: 10px;
+  grid-gap: 10px;
+}
+
+.images {
+  width: 100%;
+
+  box-sizing: border-box;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .imagegrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .imagegrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .imagegrid .images:nth-child(3) {
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+  }
+}
